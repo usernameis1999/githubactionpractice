@@ -27,7 +27,7 @@ jobs:
     name: job-3
     runs-on:
       - ubuntu-latest
-    if: ${{github.event.inputs.require-job-3}} == "true"
+    if: github.event.inputs.require-job-3 == "true"
     needs:
     - job-1
     steps:
