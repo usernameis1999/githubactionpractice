@@ -6,24 +6,24 @@ name: simple-workflow-practice
 on:
   workflow_dispatch:
   
-  inputs:
-    name: 
-      description: "Person to greet"
-      default: "World"
-      required: true
-      type: string
-    city:
-      description : "City you like"
-      default: "Tupelo"
-      type: choice
-      options:
-        - Paris
-        - Seattle
-        - Tupelo
-    favoredColor-blue:
-        description: "Is your favourate color blue"
-        default: true
-        type: boolean
+    inputs:
+      name: 
+        description: "Person to greet"
+        default: "World"
+        required: true
+        type: string
+      city:
+        description : "City you like"
+        default: "Tupelo"
+        type: choice
+        options:
+          - Paris
+          - Seattle
+          - Tupelo
+      favoredColor-blue:
+          description: "Is your favourate color blue"
+          default: true
+          type: boolean
     
 jobs:
   greets:
