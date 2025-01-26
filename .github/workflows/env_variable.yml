@@ -1,6 +1,10 @@
 name: environment and variables
 on:
   workflow_dispatch:
+env:
+  VAR1: mykeyis1
+  VAR2: mykeyis2
+  VAR3: mykeyis3
 
 jobs:
   job-1:
@@ -31,5 +35,20 @@ jobs:
     steps:
       - name: use outputs
         run: |
-          echo ${{needs.job-2.outputs.output1}} echo ${{needs.job-2.outputs.output2}}
+          echo ${{needs.job-2.outputs.output1}} && ${{needs.job-2.outputs.output2}}
         
+  job-4:
+    runs-on: ubuntu-latest
+    env:
+      VAR2: Sleep4
+      VAR3: Sleep5
+    steps:
+      - name: echo job
+        env:
+          VAR3: study6
+        run: |
+          echo ${{env.VAR1}}
+          echo $ VAR1
+          echo $ VAR2
+          echo $ VAR3
+          
