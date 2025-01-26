@@ -1,6 +1,6 @@
 name: chaining jobs 1
 on:
-  workflow_dispatch
+  workflow_dispatch:
     inputs:
       require-job-3:
         description: "If job 3 runs"
