@@ -28,8 +28,6 @@ jobs:
     runs-on:
       - ubuntu-latest
       #if: ${{github.event.inputs.require-job-3}} == "true"
-    needs:
-      - job-2
     steps:
       - name: run job 3
         run: echo "This is job 3"
