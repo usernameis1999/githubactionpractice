@@ -1,0 +1,39 @@
+name: Action Practice
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Provide your name"
+        default: "happy"
+        required: True
+        type: string
+      city:
+        description: "Provide your favorite city"
+        default: "Seattle"
+        required: True
+        type: choices
+        options:
+          - Paris
+          - Seattle
+          - London
+      fav-color-blue:
+          description: "Is your favorite color blue"
+          required: True
+          default: True
+          type: boolean
+
+jobs:
+   greet:
+     name: "greeting program!"
+     runs-on:
+       - ubuntu-latest
+     steps:
+       - name: Send greeting
+       - run: |
+           echo "Hello ${{github.event.inputs.name}}"
+           echo "Your favrotie city is ${{github.event.inputs.city}}"
+           echo "Is your favorite color blue ${{github.event.inputs.fav-color-blue}}"
+         
+    
+
