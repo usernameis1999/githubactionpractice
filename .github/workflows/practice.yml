@@ -28,7 +28,7 @@ on:
 jobs:
   greets:
     name: "Greet!Program"
-    run-on: 
+    runs-on: 
       - ubuntu-latest
     steps:
       - name: "send greetings"
