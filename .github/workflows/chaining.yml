@@ -13,5 +13,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: echo job 1
-        runs: echo "This is job 1"
+        run: echo "This is job 1"
         
