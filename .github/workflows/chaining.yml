@@ -1,0 +1,17 @@
+name: chaining jobs 1
+on:
+  workflow_dispatch
+    inputs:
+      require-job-3:
+        description: "If job 3 runs"
+        required: true
+        type: boolean
+
+jobs:
+  job-1:
+    name: Job-1
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo job 1
+        runs: echo "This is job 1"
+        
