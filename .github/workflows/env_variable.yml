@@ -1,0 +1,14 @@
+name: environment and variables
+on:
+  workflow_dispatch:
+
+jobs:
+  job-1:
+    name: github context
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo github context
+        env:
+          GITHUB-CONTEXT: ${{tojson(github)}}
+        run: echo "$GITHUB-CONTEXT"
+  
