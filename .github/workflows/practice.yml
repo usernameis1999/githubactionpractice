@@ -4,7 +4,7 @@ name: simple-workflow-practice
 
 # Controls when the workflow will run
 on:
-  workflow-dispatch:
+  workflow_dispatch:
   
   inputs:
     name: 
