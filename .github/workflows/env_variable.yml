@@ -30,4 +30,4 @@ jobs:
     needs: job-2
     steps:
       - name: use outputs
-        run: echo ${{needs.job-2.outputs.output1}}&& ${{needs.job-2.outputs.output2}}
+        run: echo ${{needs.job-2.outputs.output1}} & ${{needs.job-2.outputs.output2}}
