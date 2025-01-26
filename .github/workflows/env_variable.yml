@@ -48,7 +48,7 @@ jobs:
           VAR3: study6
         run: |
           echo ${{env.VAR1}}
-          echo $ VAR1
-          echo $ VAR2
-          echo $ VAR3
+          echo $VAR1
+          echo $VAR2
+          echo $VAR3
           
