@@ -11,4 +11,23 @@ jobs:
         env:
           GITHUB-CONTEXT: ${{tojson(github)}}
         run: echo "$GITHUB-CONTEXT"
-  
+  job-2:
+    name: prepare outputs
+    runs-on: ubuntu-latest
+    outputs:
+      output1: ${{steps.job-2-step1.outputs.step1value}}
+      output2: ${{steps.job-2-step2.outputs.step2value}}
+    steps:
+      - name: job-2-step1
+        id: job-2-step1
+        run: echo "step1value=Hello" >> $GITHUB_OUTPUT
+      - name: job-2-step2
+        id: job-2-step2
+        run: echo "step2value=World" >> GITHUB_OUTPUT
+  job-3:
+    name: use outputs
+    runs-on: ubuntu-latest
+    needs: job-2
+    steps:
+      - name: use outputs
+        run: echo ${{needs.job-2.outputs.output1}} ${{needs.job-2.outputs.output2}}
